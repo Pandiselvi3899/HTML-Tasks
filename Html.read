@@ -1,0 +1,771 @@
+HTML Task to know the usage of basic tags:
+
+1.Fix the bugs in bellow snippet
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+<p> guvi</p>
+<div>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</div>
+<div>
+Guvi Geek Network
+</div>
+</body>
+</html>
+
+
+2.Try the below one
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+<p> guvi</p>
+<div>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</div>
+<div>
+Guvi Geek Network
+</div>
+</body>
+</html>
+
+3.Design a contact us form with all fields as required
+
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <!--<img src="images/frontImg.jpg" alt="">-->
+        <div class="text">
+          <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+        <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Submit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Sign up</div>
+        <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Submit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+ 
+
+
+CSS:
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7d2ae8;
+  padding: 30px;
+}
+.container{
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2700px;
+}
+.container .cover{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+.container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+ .container .cover .front,
+ .container .cover .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cover .back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #7d2ae8;
+  opacity: 0.5;
+  z-index: 12;
+}
+.container .cover::after{
+  opacity: 0.3;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.container .cover .text{
+  position: absolute;
+  z-index: 130;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cover .text .text-1,
+.cover .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.cover .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+.container .forms{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.container .form-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-content .login-form,
+.form-content .signup-form{
+  width: calc(100% / 2 - 25px);
+}
+.forms .form-content .title{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .title:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #7d2ae8;
+}
+.forms .signup-form  .title:before{
+  width: 20px;
+}
+.forms .form-content .input-boxes{
+  margin-top: 30px;
+}
+.forms .form-content .input-box{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.form-content .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+  border-color: #7d2ae8;
+}
+.form-content .input-box i{
+  position: absolute;
+  color: #7d2ae8;
+  font-size: 17px;
+}
+.forms .form-content .text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .text a{
+  text-decoration: none;
+}
+.forms .form-content .text a:hover{
+  text-decoration: underline;
+}
+.forms .form-content .button{
+  color: #fff;
+  margin-top: 40px;
+}
+.forms .form-content .button input{
+  color: #fff;
+  background: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.forms .form-content .button input:hover{
+  background: #5b13b9;
+}
+.forms .form-content label{
+  color: #5b13b9;
+  cursor: pointer;
+}
+.forms .form-content label:hover{
+  text-decoration: underline;
+}
+.forms .form-content .login-text,
+.forms .form-content .sign-up-text{
+  text-align: center;
+  margin-top: 25px;
+}
+.container #flip{
+  display: none;
+}
+@media (max-width: 730px) {
+  .container .cover{
+    display: none;
+  }
+  .form-content .login-form,
+  .form-content .signup-form{
+    width: 100%;
+  }
+  .form-content .signup-form{
+    display: none;
+  }
+  .container #flip:checked ~ .forms .signup-form{
+    display: block;
+  }
+  .container #flip:checked ~ .forms .login-form{
+    display: none;
+  }
+}
+ 
+
+
+
+
+
+4.Use certain HTML elements to display the following on an HTML page.
+
+
+                            <ul>
+
+
+
+
+<li>Programming Language
+
+
+<ul>
+
+
+<li>JavaScript
+
+
+<ol>
+
+
+<li>Angular</li>
+
+
+<li>React</li>
+
+
+<li>Vue.js</li>
+
+
+</ol>
+
+
+</li>
+
+
+<li>Python
+
+
+<ol>
+
+
+<li>Django Framework</li>
+
+
+<li>Flask Framework</li>
+
+
+</ol>
+
+
+</li>
+
+
+<li>Java
+
+
+<ol>
+
+
+<li>Spring</li>
+
+
+<li>Maven</li>
+
+
+<li>Hibernate</li>
+
+
+</ol>
+
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>Database
+
+
+<ul>
+
+
+<li>MySQL</li>
+
+
+<li>MongoDB</li>
+
+
+<li>Cansandra</li>
+
+
+</ul>
+
+
+</li>
+
+
+</ul>
+
+
+
+5.Create an element that helps you to open the http://google.com in a separate new tab
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Static Template</title>
+</head>
+<body>
+<a href="https://www.google.com" target="_blank">Google</a>
+</body>
+</html>
+
+
+
+
+
+
+6.In the form, add two radio buttons with grouping them for employee type
+
+<html>
+<body>
+<form action=””name=”form1”>
+<p>First Name
+<input name=”fname”type=”text”>
+<br>
+<br>
+Last Name
+<input name=”lname”type=”text”>
+<br>
+<br>
+Business<br>
+<input name=”business”type=”radio”value=”salaried”>
+Salaried<br>
+<input name=”business”type=”radio”value=”own business”>
+Own Business</p>
+<p>
+<label>
+<input type=”button”name=”calc”value=”Show Me”>
+</lable>
+<br>
+</p>
+</form>
+</body>
+</html>
+
+
+7.Design form shown in the link (http://evc-cit.info/cit040/formguide/card_0.png)
+
+
+form name="myForm" action="/cgi-bin/formguide/subscribe.cgi" method="post">
+<h1 style="font-size:110%; color: white; background-color: red">Yes!
+I want to subscribe to <i>Mag-O-Zine</i></h1>
+<p>
+<select name="title">
+  <option> Mr.</option>
+  <option> Mrs.</option>
+  <option selected="selected"> Ms.</option>
+  <option> Miss</option>
+  <option> Dr.</option>
+  <option> Contessa</option>
+</select>
+
+First Name: <input type="text" name="fname" size="12" />
+Last Name: <input type="text" name="lname" size="20" />
+<br />
+Address: <input type="text" name="addr" size="40" />
+<br />
+City: <input type="text" name="city" size="12" />
+State: <input type="text" name="state" size="4" value="CA" />
+Zip: <input type="text" name="zip" size="10" />
+</p>
+
+<p>
+Subscribe for:
+<input type="radio" name="years" value="1" /> 1 year ($19.95)
+<input type="radio" name="years" value="2"
+	checked="checked" /> 2 years ($35.00)
+</p>
+
+<div style="float:left; width: 250px;">
+Send me more information about: <br />
+<input type="checkbox" name="check1" value="Computer-Zine"
+	checked="checked" /> Computer-Zine <br />
+<input type="checkbox" name="check2" value="Fisher-Zine" /> Fisher-Zine <br />
+<input type="checkbox" name="check3" value="Cat-O-Zine" /> Cat-O-Zine
+</div>
+
+<p>
+Special instructions: <br />
+<textarea name="special" rows="3" cols="35"></textarea>
+</p>
+<p style="clear:left;">
+<input type="submit" value="Send" />
+<input type="reset" value="Reset Form" />
+</p>
+</form>
+
+
+8.Use the table tag to design the given image.
+
+<caption>Health Chart</caption>
+<table border="1" cellpadding="0" cellspacing="0"> 
+<tr height="50"> 
+<td align="center" width="150" rowspan="2">State of Health</td>
+ <td align="center" width="300" colspan="2">Fasting Value</td>
+ <td align="center" width="150">After Eating</td>
+ </tr> 
+<tr height="50">
+ <td align="center" width="150">Minimum</td> 
+<td align="center" width="150">Maximum</td> 
+<td align="center" width="150">2 hours after eating</td> 
+</tr>
+ <tr height="50">
+ <td align="center" width="150">Healthy</td>
+ <td align="center" width="150">70</td> 
+<td align="center" width="150">100</td>
+ <td align="center" width="150">Less than 140</td>
+ </tr>
+ <tr height="50"> 
+<td align="center" width="150">Pre-Diabetes</td>
+ <td align="center" width="150">101</td>
+ <td align="center" width="150">126</td>
+ <td align="center" width="150">140 to 200</td> 
+</tr>
+ <tr height="50">
+ <td align="center" width="150">Diabetes</td> 
+<td align="center" width="150">More than 126</td> 
+<td align="center" width="150">N/A</td> 
+<td align="center" width="150">More than 200</td> 
+</tr>
+ </table>
+
+
+
+9.Write HTML input tags snippet to show default values for all Form elements
+
+
+<form action="/action_page.php">
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname" value="John"><br><br>
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" value="Doe"><br><br>
+<input type="submit" value="Submit">
+</form>
+
+
+
+10.In your, HTML page add the below line and highlight it without using any CSS
+
+
+<!DOCTYPE  html>  
+<html>     
+<head>      
+<title>     
+</title>  
+</head>  
+<body>   
+<mark>"HTML & CSS is awesome"</mark>  
+</body>   
+</html>
+ 
+11.Create an HTML page, which should contain all types of input elements.
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- External CSS stylesheet -->
+	<link rel="stylesheet" type="text/css" href="./assets/style.css">
+	<title>HTML Forms</title>
+</head>
+<body>
+	<h1>Form</h1>
+	<form>
+		<fieldset>
+  			<legend>Personal Info</legend>
+			<label for="fname">Name</label>
+			<input type="text" name="name" id="fname">
+			<br>
+
+			<label for="email">Email</label>
+			<input required type="email" id="email" name="email" placeholder="john@example.com">
+			<br>
+
+			<label for="pass">Password</label>
+			<input type="password" name="pwd" id="pass">
+			<br>
+
+			<label for="phone">Phone number</label>
+	  		<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="123-45-678">
+			<br>
+
+			<label for="bday">Birthday</label>
+	  		<input type="date" id="bday" name="birthday">
+  		</fieldset>
+		<br>
+
+  		<label for="aptime">Schedule an appointment (date and time)</label>
+  		<input type="datetime-local" id="aptime" name="appt">
+  		<br>
+
+  		<label for="srch">Search:</label>
+  		<input type="search" id="srch" name="gsearch">
+  		<br>
+
+  		<label for="num">How many days in a week do you exercise? (between 0 and 7)</label>
+  		<input type="number" id="num" name="quantity" min="0" max="7">
+  		<br>
+
+  		<label for="favcolor">Favorite color</label>
+  		<input type="color" id="favcolor" name="clr" value="#ff0000">
+  		<br>
+
+  		<label for="fit">Current fitness level (between 0 and 5)</label>
+  		<input type="range" id="fit" name="fit" min="0" max="5">
+  		<br>
+  		<fieldset>
+  			<legend>Uploads</legend>
+	  		<label for="myfile">Select a file</label>
+	  		<input type="file" id="myfile" name="doc">
+	  		<br>
+
+	  		<label for="mypic">Select one or more images</label>
+	  		<input type="file" id="mypic" name="pic" accept="image/*" multiple="">
+	  		<br>
+
+	  		<label for="mypics">PNG & JPG Images</label>
+	  		<input type="file" id="mypics" name="pictures" accept="image/png, image/jpg" multiple="">
+  		</fieldset>
+  		<br>
+
+  		<input type="checkbox" name="remember" id="remember" value="is checked" checked>
+      <label for="remember" class="checkbox">Remember me</label>
+      <br>
+
+      <input type="checkbox" name="privacy" id="terms" value="terms accepted">
+      <label for="terms" class="checkbox">Accept the Terms of Service</label>
+      <br>
+
+      <input type="checkbox" name="privacy" id="news" value="subscribed">
+      <label for="news" class="checkbox">Subscribe to our newsletter</label>
+      <br>
+
+      <input type="radio" name="age" id="child" value="junior">
+      <label for="child" class="radio">Under 18</label>
+      <br>
+
+      <input type="radio" name="age" id="adult" value="middleage">
+		<label for="adult" class="radio">18 - 65</label>
+		<br>
+
+		<input type="radio" name="age" id="old" value="senior">
+		<label for="old" class="radio">65 +</label>
+		<br>
+
+		<input type="radio" name="food" id="veg" value="vegetarian">
+   	<label for="veg" class="radio">Vegetarian</label>
+   	<br>
+
+   	<input type="radio" name="food" id="non-veg" value="non-vegetarian">
+   	<label for="non-veg" class="radio">Non-Vegetarian</label>
+   	<br>
+
+   	<input type="radio" name="food" id="plantbased" value="vegan">
+   	<label for="plantbased" class="radio">Vegan</label>
+   	<br>
+
+   	<label for="msg">Message</label>
+		<textarea id="msg" name="message"  rows="8" cols="30">
+  		</textarea>
+  		<br>
+
+  		<select name="food" id="food">
+
+	  		<optgroup label="Indian">
+		      <option value="palak">Palak Paneer</option>
+		      <option value="biryani">Biryani</option>
+		   </optgroup>
+
+		   <optgroup label="Mexican">
+		      <option value="tacos">Tacos</option>
+		      <option value="burrito">Burrito</option>
+		   </optgroup>
+
+		   <optgroup label="Japanese">
+		      <option value="ramen">Ramen</option>
+		      <option value="sushi">Sushi</option>
+		   </optgroup>
+
+		</select>
+	  	<br>
+
+	  	<label for="superhero">Favorite superhero</label>
+		<input list="favhero" name="superhero" id="superhero">
+		<datalist id="favhero">
+		    <option value="Batman">
+		    <option value="Superman">
+		    <option value="Catwoman">
+		    <option value="Spiderman">
+		    <option value="Hulk">
+		</datalist>
+		<br>
+
+		<button type="submit">Sign Up</button>
+	</form>
+</body>
+</html>
+
+
+
+
+
